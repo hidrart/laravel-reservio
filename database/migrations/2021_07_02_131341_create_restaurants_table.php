@@ -17,11 +17,11 @@ class CreateRestaurantsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('type');
-            $table->string('name', 25);
+            $table->string('name');
             $table->text('description');
             $table->string('address')->nullable();
             $table->string('cover');
-            $table->unsignedInteger('score');
+            $table->float('score', 2, 1);
         });
     }
 

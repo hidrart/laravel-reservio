@@ -23,12 +23,12 @@ class RestaurantFactory extends Factory
     {
         $category = ['cafe', 'restaurant', 'bar', 'lounge'];
         return [
-            'name' => "The" . " " . $this->faker->domainWord() . " " . "Restaurant" , 
+            'name' => "The" . " " . $this->faker->domainWord() . " " . $category[rand(0,3)], 
             'description' => $this->faker->paragraphs(3, true),
             'address' => $this->faker->address(),
             'cover' => $this->faker->imageUrl(640, 480, 'restaurant', true),
             'type' => $category[rand(0,3)],
-            'score' => $this->faker->numberBetween(1, 5)
+            'score' => $this->faker->randomFloat(1, 3, 5)
         ];
     }
 }
