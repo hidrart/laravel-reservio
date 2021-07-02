@@ -23,7 +23,6 @@ class StandFactory extends Factory
     {
         $category = ['vip', 'regular', 'private', 'bussiness'];
         return [
-            'name' => $this->faker->word(), 
             'description' => $this->faker->paragraphs(rand(3,5), true),
             'cover' => $this->faker->imageUrl(640, 480, 'restaurant', true),
             'type' => $category[rand(0,3)],

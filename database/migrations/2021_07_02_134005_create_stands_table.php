@@ -17,7 +17,6 @@ class CreateStandsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('type');
-            $table->string('name', 25);
             $table->text('description');
             $table->unsignedInteger('seat');
             $table->string('cover');

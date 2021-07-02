@@ -23,8 +23,9 @@ class RestaurantFactory extends Factory
     {
         $category = ['cafe', 'restaurant', 'bar', 'lounge'];
         return [
-            'name' => $this->faker->word(2, true), 
+            'name' => "The" . " " . $this->faker->domainWord() . " " . "Restaurant" , 
             'description' => $this->faker->paragraphs(3, true),
+            'address' => $this->faker->address(),
             'cover' => $this->faker->imageUrl(640, 480, 'restaurant', true),
             'type' => $category[rand(0,3)],
             'score' => $this->faker->numberBetween(1, 5)

@@ -10,7 +10,7 @@ class Stand extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','description','type','seat','cover'
+        'description','type','seat','cover'
     ];
     
     public function restaurant()
