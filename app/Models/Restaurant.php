@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    public function stands(): HasMany
+    use HasFactory;
+
+    protected $fillable = [
+        'name','description','cover','score','address'
+    ];
+    
+    public function stand()
     {
-        return $this->hasMany(Stands::class);
+        return $this->hasMany(Stand::class);
     }
 
 }

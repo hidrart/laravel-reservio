@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stand extends Model
 {
-    // use HasFactory;
+    use HasFactory;
+
     protected $fillable = [
         'name','description','type','seat','cover'
     ];
-
-    public function restaurant(): BelongsTo
+    
+    public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
     }
