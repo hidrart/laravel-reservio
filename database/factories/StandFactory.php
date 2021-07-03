@@ -21,13 +21,16 @@ class StandFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
+        $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
+
         $category = ['vip', 'regular', 'private', 'bussiness'];
         return [
             'description' => $this->faker->paragraphs(rand(3,5), true),
-            'cover' => $this->faker->imageUrl(640, 480, 'restaurant', true),
+            'cover' => $faker->imageUrl($width = 640, $height = 480, ['table']),
             'type' => $category[rand(0,3)],
-            'seat' => $this->faker->numberBetween(2, 8)
-            
+            'seat' => $this->faker->numberBetween(2, 8)         
         ];
     }
 }
