@@ -22,7 +22,6 @@ class FoodFactory extends Factory
     
     public function definition()
     {
-        
         $faker = \Faker\Factory::create();
         $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
         $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
@@ -33,18 +32,28 @@ class FoodFactory extends Factory
         switch ($type) {
             case 'Main':
                 $food = $faker->foodName();
+                $n = 2;
+                $m = 3;
                 break;
             case 'Beverage':
                 $food = $faker->beverageName();
+                $n = 1;
+                $m = 2;
                 break;
             case 'Dairy':
                 $food = $faker->dairyName();
+                $n = .5;
+                $m = 1.5;
                 break;
             case 'Vegetable':
                 $food = $faker->vegetableName();
+                $n = .5;
+                $m = 1.5;
                 break;
             case 'Meat':
                 $food = $faker->meatName();
+                $n = 2;
+                $m = 4;
                 break;
             default:
             $food = $faker->foodName();
@@ -54,9 +63,9 @@ class FoodFactory extends Factory
         return [
             'name' => $food,
             'description' => $this->faker->paragraphs(rand(3,5), true),
-            'cover' => $faker->imageUrl($width = 640, $height = 480, [$faker->foodName()], false),
+            'cover' => $faker->imageUrl($width = 640, $height = 480, [$food]),
             'type' => $type,
-            'price' => $this->faker->randomFloat(1, 2, 3) * 10000,      
+            'price' => $this->faker->randomFloat(1, $n, $m) * 10000,      
             'score' => $this->faker->randomFloat(1, 3, 5)  
         ];
     }

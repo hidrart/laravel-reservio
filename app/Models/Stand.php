@@ -17,4 +17,8 @@ class Stand extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+    public function Order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
