@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/restaurant', function () {
-    return view('pages.restaurant');
-})->name('restaurant');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/restaurant', [RestaurantController::class,  'index'])->name('restaurant.index');
+});
 
 require __DIR__.'/auth.php';
