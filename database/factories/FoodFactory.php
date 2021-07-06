@@ -26,8 +26,8 @@ class FoodFactory extends Factory
         $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
         $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
 
-        $category = ['Main','Beverage','Dairy','Vegetable','Meat'];
-        $type = $category[rand(0,4)];
+        $foodCategory = ['Main','Beverage','Dairy','Vegetable','Meat'];
+        $type = $foodCategory[rand(0,4)];
 
         switch ($type) {
             case 'Main':
@@ -63,7 +63,7 @@ class FoodFactory extends Factory
         return [
             'name' => $food,
             'description' => $this->faker->paragraphs(rand(3,5), true),
-            'cover' => $faker->imageUrl($width = 640, $height = 480, [$food]),
+            'cover' => $faker->imageUrl(640, 480, [$food], false, false, [$food]),
             'type' => $type,
             'price' => $this->faker->randomFloat(1, $n, $m) * 10000,      
             'score' => $this->faker->randomFloat(1, 3, 5)  

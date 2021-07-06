@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/restaurant', [RestaurantController::class,  'index'])->name('restaurant.index');
+    Route::get('/restaurants', [RestaurantController::class,  'index'])->name('restaurant.index');
 });
 
 require __DIR__.'/auth.php';

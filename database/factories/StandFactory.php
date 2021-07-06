@@ -25,11 +25,11 @@ class StandFactory extends Factory
         $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
         $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
 
-        $category = ['vip', 'regular', 'private', 'bussiness'];
+        $type = ['vip', 'regular', 'private', 'bussiness'];
         return [
             'description' => $this->faker->paragraphs(rand(3,5), true),
-            'cover' => $faker->imageUrl($width = 640, $height = 480, ['table']),
-            'type' => $category[rand(0,3)],
+            'cover' => $faker->imageUrl(640, 480, ['restaurant'], false, false, ['table']),
+            'type' => $type[rand(0,3)],
             'seat' => $this->faker->numberBetween(2, 8)         
         ];
     }

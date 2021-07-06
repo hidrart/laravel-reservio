@@ -25,13 +25,15 @@ class RestaurantFactory extends Factory
         $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
         $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
 
-        $category = ['Cafe', 'Restaurant', 'Bar', 'Lounge'];
+        $restaurantCategory = ['Cafe', 'Restaurant', 'Bar', 'Lounge'];
+        $type = $restaurantCategory[rand(0,3)];
+        
         return [
-            'name' => $this->faker->firstName() . " " . $category[rand(0,3)], 
+            'name' => $this->faker->firstName() . " " . $type, 
             'description' => $this->faker->paragraphs(3, true),
             'address' => $this->faker->address(),
-            'cover' => $faker->imageUrl($width = 640, $height = 480, ['restaurant']),
-            'type' => $category[rand(0,3)],
+            'cover' => $faker->imageUrl(640, 480, ['restaurant'], false, false, ['food']),
+            'type' => $type,
             'score' => $this->faker->randomFloat(1, 3.8, 5)
         ];
     }
