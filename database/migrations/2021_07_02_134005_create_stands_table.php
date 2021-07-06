@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateStandsTable extends Migration
 {
@@ -17,6 +17,7 @@ class CreateStandsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('type');
+            $table->string('name');
             $table->text('description');
             $table->unsignedInteger('seat');
             $table->string('cover');

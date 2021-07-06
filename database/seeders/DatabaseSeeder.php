@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         ])->create();
         User::factory()->count(10)->create();
         Restaurant::factory()
-            ->count(10)
-            ->hasStand(6)
-            ->hasFood(10)
+            ->count(50)
+            ->hasStand(14)
+            ->hasFood(20)
             ->create();
     }
 }

@@ -2,7 +2,7 @@
     <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
         @foreach ($restaurants as $restaurant)
         <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <a href="#_" class="block">
+            <a href="{{ route('stands.index', $restaurant->id) }}" class="block">
                 <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56" alt={{ $restaurant->name }}
                     src="{{ $restaurant->cover }}">
             </a>
@@ -42,10 +42,12 @@
                         </div>
                 </div>
             </div>
-            <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $restaurant->name }}</h2>
+            <a href="{{ route('stands.index', $restaurant->id) }}" class="block">
+                <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $restaurant->name }}</h2>
+            </a>
             <p class="text-sm text-gray-500 text-justify">{!! \Illuminate\Support\Str::words($restaurant->description,
                 25,'...') !!}</p>
-            <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1">{{ $restaurant->address }}</a>
+            <p class="pt-2 text-xs font-medium"><a href="#" class="mr-1">{{ $restaurant->address }}</a>
         </div>    
         @endforeach     
     </div>

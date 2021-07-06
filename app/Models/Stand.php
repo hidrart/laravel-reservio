@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Stand extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'description','type','seat','cover'
+        'name','description','type','seat','cover'
     ];
     
     public function restaurant()

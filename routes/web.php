@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StandController;
 use App\Http\Controllers\RestaurantController;
 
 /*
@@ -23,7 +24,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/restaurants', [RestaurantController::class,  'index'])->name('restaurant.index');
+    Route::get('/restaurants', [RestaurantController::class,  'index'])->name('restaurants.index');
+    Route::get('/restaurants/{id}/stands', [StandController::class,  'index'])->name('stands.index');
 });
 
 require __DIR__.'/auth.php';

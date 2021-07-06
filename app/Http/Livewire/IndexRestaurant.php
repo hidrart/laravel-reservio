@@ -13,7 +13,7 @@ class IndexRestaurant extends Component
     public function render()
     {
         return view('livewire.index-restaurant', [
-            'restaurants' => Restaurant::orderBy('name', 'asc')->simplePaginate(6)
+            'restaurants' => Restaurant::orderBy('id', 'asc')->Paginate(12)
         ]);
     }
 }   

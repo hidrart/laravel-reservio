@@ -24,9 +24,10 @@ class StandFactory extends Factory
         $faker = \Faker\Factory::create();
         $faker->addProvider(new \FakerRestaurant\Provider\id_ID\Restaurant($faker));
         $faker->addProvider(new \Xvladqt\Faker\LoremFlickrProvider($faker));
-
         $type = ['vip', 'regular', 'private', 'bussiness'];
-        return [
+        
+        return [            
+            'name' => $this->faker->firstName() . " " . "Table", 
             'description' => $this->faker->paragraphs(rand(3,5), true),
             'cover' => $faker->imageUrl(640, 480, ['restaurant'], false, false, ['table']),
             'type' => $type[rand(0,3)],
