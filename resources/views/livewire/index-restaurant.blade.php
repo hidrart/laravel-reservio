@@ -9,13 +9,13 @@
             <div class="w-full flex justify-between">
                 @php
                 $color = ['bg-blue-400', 'bg-red-400', 'bg-green-400', 'bg-yellow-400'];
-                $restaurantCategory = ['Cafe', 'Restaurant', 'Bar', 'Lounge'];
+                $restaurantCategory = ['1', '2', '3', '4'];
                 @endphp
 
                 @for ($i = 0; $i < count($color); $i++)
-                    @if ($restaurant->type == $restaurantCategory[$i])
+                    @if ($restaurant->category_id == $restaurantCategory[$i])
                         <div class="{{ $color[$i] }} items-center px-3 py-1.5 rounded text-xs font-medium uppercase text-white">
-                            <span>{{ $restaurant->type }}</span>
+                            <span>{{ \App\Models\Category::firstWhere('id', $restaurant->category_id)->name }}</span>
                         </div>
                         @break                    
                     @endif
@@ -43,10 +43,10 @@
                 </div>
             </div>
             <a href="{{ route('stands.index', $restaurant->id) }}" class="block">
-                <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $restaurant->name }}</h2>
+                <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $restaurant->name. ' '. \App\Models\Category::firstWhere('id', $restaurant->category_id)->name }}</h2>
             </a>
-            <p class="text-sm text-gray-500 text-justify">{!! \Illuminate\Support\Str::words($restaurant->description,
-                25,'...') !!}</p>
+            <p class="text-sm text-gray-500 text-justify">{!! \Illuminate\Support\Str::limit($restaurant->description,
+                150,'...') !!}</p>
             <p class="pt-2 text-xs font-medium"><a href="#" class="mr-1">{{ $restaurant->address }}</a>
         </div>    
         @endforeach     

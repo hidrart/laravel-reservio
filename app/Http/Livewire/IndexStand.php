@@ -18,6 +18,8 @@ class IndexStand extends Component
     
     public function render()
     {
-        return view('livewire.index-stand');
+        return view('livewire.index-stand', [
+            'stands' => $this->stands
+        ]);
     }
 }
