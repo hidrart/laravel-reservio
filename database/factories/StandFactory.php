@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Stand;
+use App\Models\Restaurant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class StandFactory extends Factory
@@ -33,5 +34,11 @@ class StandFactory extends Factory
             'type' => $type[rand(0,3)],
             'seat' => $this->faker->numberBetween(2, 8)         
         ];
+    }
+    public function ofRestaurant(Restaurant $restaurant)
+    {
+        return $this->state([
+            'restaurant_id' => $restaurant->id
+        ]);
     }
 }

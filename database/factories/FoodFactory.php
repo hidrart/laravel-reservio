@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Food;
+use App\Models\Restaurant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FoodFactory extends Factory
@@ -68,5 +69,12 @@ class FoodFactory extends Factory
             'price' => $this->faker->randomFloat(1, $n, $m) * 10000,      
             'score' => $this->faker->randomFloat(1, 3, 5)  
         ];
+    }
+
+    public function ofRestaurant(Restaurant $restaurant)
+    {
+        return $this->state([
+            'restaurant_id' => $restaurant->id
+        ]);
     }
 }

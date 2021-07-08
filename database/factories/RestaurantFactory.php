@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Restaurant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -32,5 +33,11 @@ class RestaurantFactory extends Factory
             'cover' => $faker->imageUrl(640, 480, ['restaurant'], false, false, ['food']),
             'score' => $this->faker->randomFloat(1, 3.8, 5)
         ];
+    }
+    public function ofCategory(Category $category)
+    {
+        return $this->state([
+            'category_id' => $category->id
+        ]);
     }
 }
