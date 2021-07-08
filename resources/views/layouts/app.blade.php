@@ -10,6 +10,7 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -21,7 +22,7 @@
 
 <body class="antialiased" style="font-family: 'Poppins', sans-serif;">
     <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+        @livewire('navigation')
 
         <!-- Page Heading -->
         {{-- <header class="bg-white shadow">
@@ -37,13 +38,11 @@
     </div>
     @include('layouts.footer')
 
-    <!-- Livewire Styles -->
-    @livewireScripts
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    {{-- <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>  --}}
-
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script> 
+    <!-- Livewire Styles -->
+    @livewireScripts
 </body>
 
 </html>

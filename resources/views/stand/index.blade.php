@@ -7,7 +7,7 @@
 
     <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="px-10 w-full py-8 flex justify-between">    
+            <div class="px-10 w-full py-8 flex justify-between">
                 <div>
                     <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Stands</a></h1>
                     <p class="text-lg font-medium text-gray-500">Choose your Table.</p>

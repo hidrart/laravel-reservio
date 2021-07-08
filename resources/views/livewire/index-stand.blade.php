@@ -1,5 +1,5 @@
 <div class="item-center">
-    <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
+    <div class="flex grid grid-cols-12 pb-12 sm:px-5 gap-x-8 gap-y-16">
         @foreach ($stands as $stand)
         <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
             <a href="#" class="block">
@@ -90,11 +90,10 @@
             @php
             $restaurant = \App\Models\Restaurant::where('id', $stand->restaurant_id)->first();
             @endphp
-            <p class="pt-2 text-xs font-medium underline"><a href="{{ route('restaurants.index') }}" class="mr-1">{{ $restaurant->name }}</a>
+            <p class="pt-2 text-xs font-medium underline"><a href="{{ route('restaurants.index') }}" class="mr-1">{{ $restaurant->name.' '. \App\Models\Category::where('id', $restaurant->category_id)->find(1)->name }} </a>
         </div>
         @endforeach
     </div>
-    {{-- {!! $stands->links() !!} --}}
 
     @if ($stands->isEmpty())
     <p class="text-gray-800 font-bold text-2xl text-center my-10">No stand found!</p>

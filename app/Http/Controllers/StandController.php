@@ -13,10 +13,11 @@ class StandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($restaurant_id)
+    public function index()
     {
-        return view('stand.index')->with('stands', Stand::where('restaurant_id', $restaurant_id)->get());
+        //    
     }
+    
 
     /**
      * Show the form for creating a new resource.

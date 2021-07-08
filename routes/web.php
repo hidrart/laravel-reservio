@@ -1,6 +1,8 @@
 <?php
 
+use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\IndexRestaurant;
 use App\Http\Controllers\StandController;
 use App\Http\Controllers\RestaurantController;
 
@@ -25,7 +27,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/restaurants', [RestaurantController::class,  'index'])->name('restaurants.index');
-    Route::get('/restaurants/{id}/stands', [StandController::class,  'index'])->name('stands.index');
-});
+    Route::get('/restaurants/{id}/table', [RestaurantController::class,  'showTable'])->name('restaurants.table');
+}); 
 
 require __DIR__.'/auth.php';
