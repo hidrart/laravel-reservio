@@ -1,10 +1,9 @@
 <?php
 
 use App\Http\Livewire\Dashboard;
-use App\Http\Livewire\IndexStand;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\IndexRestaurant;
-use App\Http\Controllers\RestaurantController;
+use App\Http\Livewire\RestaurantIndex;
+use App\Http\Livewire\RestaurantTable;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +22,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/restaurants', IndexRestaurant::class)->name('restaurants.index');
-    Route::get('/restaurants/{restaurant}/table', IndexStand::class)->name('restaurants.table');
+    Route::get('/restaurants', RestaurantIndex::class)->name('restaurants.index');
+    Route::get('/restaurants/{restaurant}/table', RestaurantTable::class)->name('restaurants.table');
 }); 
 
 require __DIR__.'/auth.php';

@@ -18,7 +18,10 @@ class RestaurantTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->user = User::factory()->create();
+        $this->user = User::factory([
+            'name' => 'Hidrart',
+            'email' => 'hdytrvli@gmail.com' 
+        ])->create();
         $this->category = Category::factory(['name' => 'test'])->create();
         $this->restaurant = Restaurant::factory()->ofCategory($this->category)->create();
         $this->stand = Stand::factory()->ofRestaurant($this->restaurant)->create();
@@ -34,10 +37,10 @@ class RestaurantTest extends TestCase
     }
 
     /** @test */
-    function stands_index_page_contains_livewire_component()
+    function restaurant_table_page_contains_livewire_component()
     {
         $this->actingAs($this->user)
-            ->get(route('stands.index', $this->restaurant->id))
+            ->get(route('restaurants.table', $this->restaurant))
             ->assertSeeLivewire('index-stand');
     }
 }
