@@ -5,18 +5,19 @@
         </h2>
     </x-slot>
 
-    <div class="pt-8 pb-12">
+    <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="py-8 ml-10">
-                <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Restaurants</a>
-                </h1>
-                <p class="text-lg font-medium text-gray-500">Choose your favourite Restaurant.</p>
-            </div>
-            <div class="py-3 mb-8 rounded-lg space-x-3 flex items-center">
-                <input wire:model="search" type="search"
-                    class="w-full rounded-lg bg-white border-0 focus:ring-0 placeholder-gray-400 text-sm"
-                    placeholder="Type a restaurant name">
-                <button class="focus:outline-none"><i class="fa fa-search text-gray-500"></i></button>
+            <div class="px-10 w-full py-8 flex flex-col grid grid-cols-3">
+                <div class="lg:col-span-2 col-span-3">
+                    <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Restaurants</a></h1>
+                    <p class="text-lg font-medium text-gray-500">Find your favourite restaurant here.</p>
+                </div>
+                <div class="lg:col-span-1 col-span-3 py-3 my-3 rounded-lg space-x-3 flex items-center w-">
+                    <input wire:model="search" type="search"
+                        class="w-full rounded-lg bg-white border-0 focus:ring-0 placeholder-gray-400 text-sm"
+                        placeholder="Type a restaurant name">
+                    <button class="focus:outline-none"><i class="fa fa-search text-gray-500"></i></button>
+                </div>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -33,7 +34,6 @@
                                     $color = ['bg-blue-400', 'bg-red-400', 'bg-green-400', 'bg-yellow-400'];
                                     $restaurantCategory = ['1', '2', '3', '4'];
                                     @endphp
-
                                     @for ($i = 0; $i < count($color); $i++) @if ($restaurant->category_id ==
                                         $restaurantCategory[$i])
                                         <div
@@ -84,10 +84,8 @@
                         <p class="text-gray-800 font-bold text-2xl text-center mb-10">No Restaurants found!</p>
                         @endif
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 </div>
