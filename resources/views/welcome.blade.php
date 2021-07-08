@@ -27,7 +27,7 @@
                     class="container relative flex flex-wrap items-center justify-between h-24 mx-auto overflow-hidden font-medium border-b border-gray-200 md:overflow-visible lg:justify-center sm:px-4 md:px-2">
                     <div class="flex items-center justify-start w-1/4 h-full pr-4">
                         <a href="#_" class="inline-block py-4 md:py-0">
-                            <span class="p-1 text-xl font-black leading-none text-gray-900"><span>tails</span><span
+                            <span class="p-1 text-xl font-black leading-none text-gray-900"><span>Reservio</span><span
                                     class="text-indigo-700">.</span></span>
                         </a>
                     </div>
@@ -48,14 +48,6 @@
                                     class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-700 lg:mx-3 md:text-center">Blog</a>
                                 <a href="#_"
                                     class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-700 lg:mx-3 md:text-center">Contact</a>
-                                <a href="#_"
-                                    class="absolute top-0 left-0 hidden py-2 mt-6 ml-10 mr-2 text-gray-600 lg:inline-block md:mt-0 md:ml-2 lg:mx-3 md:relative">
-                                    <svg class="inline w-5 h-5" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                    </svg>
-                                </a>
                             </div>
                             @if (Route::has('login'))
                             <div
@@ -96,9 +88,8 @@
             <div class="container max-w-lg px-4 py-32 mx-auto text-left md:max-w-none md:text-center">
                 <h1
                     class="text-5xl font-extrabold leading-10 tracking-tight text-left text-gray-900 md:text-center sm:leading-none md:text-6xl lg:text-7xl">
-                    <span class="inline md:block">Start Crafting Your</span> <span
-                        class="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-700 to-indigo-600 md:inline-block">Next
-                        Great Idea</span></h1>
+                    <span class="inline md:block">Table Reservation Made Easy</span> <span
+                        class="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-700 to-indigo-600 md:inline-block">With Reservio</span></h1>
                 <div class="mx-auto mt-5 text-gray-500 md:mt-12 md:max-w-lg md:text-center lg:text-lg">Simplifying the
                     creation of landing pages, blog pages, application pages and so much more!</div>
                 <div class="flex flex-col items-center mt-12 text-center">
