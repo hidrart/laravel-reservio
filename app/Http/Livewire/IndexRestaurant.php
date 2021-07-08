@@ -18,7 +18,7 @@ class IndexRestaurant extends Component
     }
     public function render()
     {
-        $restaurant = Restaurant::where('name', 'like', '%'.$this->search.'%')->paginate(12); 
+        $restaurant = Restaurant::where('name', 'like', '%'.$this->search.'%')->inRandomOrder()->paginate(12); 
         return view('livewire.index-restaurant', [
             'restaurants' => $restaurant
         ]);
