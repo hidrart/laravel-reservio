@@ -5,59 +5,13 @@
             {{ __('Restaurant') }}
         </h2>
     </x-slot>
-    {{-- recommendation section  --}}
-    @php
-    $featured = \App\Models\Restaurant::orderBy('score', 'desc')->first();
-    $category = \App\Models\Category::where('id', $featured->category_id)->first();
-    @endphp
-    <div class="p-5 pb-0 md:p-10 md:pb-5">
-        <a href="#"
-            class="block bg-center bg-cover bg-no-repeat rounded-lg relative p-5 transform transition-all duration-200 scale-100 hover:scale-105"
-            style="background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url({{ $featured->cover }}) ">
-            <div class="absolute top-0 right-0 -mt-3 mr-3">
-                <div class="rounded-full bg-yellow-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i
-                        class="mdi mdi-fire text-base align-middle"></i> <span class="align-middle">Recommended</span>
-                </div>
-            </div>
-            <div class="h-80"></div>
-            <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-5">{{ $featured->name.' '.$category->name }}</h2>
-            <div class="flex-1 flex items-center font-medium text-sm text-white text-opacity-60">
-                <div>{{ $featured->description }}</div>
-            </div>
-            <div class="mt-4 flex w-full items-center text-sm text-gray-300 font-medium">
-                <div class="flex-1 flex items-center text-white font-medium text-xs">
-                    <div>{{ $featured->address }}</div>
-                </div>
-                <div class="flex items-center text-xs font-medium uppercase">
-                    @for ($i = 0; $i < 5; $i++) @if ($i < round($featured->score))
-                        <svg class="mx-x w-4 h-4 fill-current text-yellow-500"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                        @else
-                        <svg class="mx-x w-4 h-4 fill-current text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                        @endif
-                        @endfor
-                        <div class="items-center px-3 py-1.5 text-xs font-medium uppercase">
-                            <span>{{ $featured->score }}</span>
-                        </div>
-                </div>
-            </div>
-            
-        </a>
-    </div>
-    {{-- main section --}}
     <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="px-10 w-full py-8 flex flex-col grid grid-cols-3">
                 {{-- title --}}
                 <div class="lg:col-span-2 col-span-3">
-                    <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Restaurants</a></h1>
+                    <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Restaurants</a>
+                    </h1>
                     <p class="text-lg font-medium text-gray-500">Find your favourite restaurant here.</p>
                 </div>
                 {{-- search --}}
@@ -88,7 +42,7 @@
                                         $restaurantCategory[$i])
                                         <div
                                             class="{{ $color[$i] }} items-center px-3 py-1.5 rounded text-xs font-medium uppercase text-white">
-                                            <span>{{ \App\Models\Category::firstWhere('id', $restaurant->category_id)->name }}</span>
+                                            <span>{{  $restaurant->category->name }}</span>
                                         </div>
                                         @break
                                         @endif
@@ -116,22 +70,18 @@
                                 </div>
                                 <a href="{{ route('restaurants.table', $restaurant->id) }}" class="block">
                                     <h2 class="text-lg font-bold sm:text-xl md:text-2xl">
-                                        {{ $restaurant->name. ' '. \App\Models\Category::firstWhere('id', $restaurant->category_id)->name }}
+                                        {{ $restaurant->name.' '.$restaurant->category->name}}
                                     </h2>
                                 </a>
-                                <p class="text-sm text-gray-500 text-justify">{!!
-                                    \Illuminate\Support\Str::limit($restaurant->description,
-                                    150,'...') !!}</p>
+                                <p class="text-sm text-gray-500 text-justify">{{ Str::limit($restaurant->description, 150,'...') }}</p>
                                 <p class="pt-2 text-xs font-medium"><a href="#"
                                         class="mr-1">{{ $restaurant->address }}</a>
                             </div>
-                            @endforeach
+                            @endforeach                         
                         </div>
-                        <div class="item-center">
-                            {!! $restaurants->links() !!}
-                        </div>
+                        {!! $restaurants->links() !!}
                         @if ($restaurants->isEmpty())
-                        <p class="text-gray-800 font-bold text-2xl text-center mb-10">No Restaurants found!</p>
+                            <p class="text-gray-800 font-bold text-2xl text-center mb-10">No Restaurants found!</p>
                         @endif
                     </div>
                 </div>

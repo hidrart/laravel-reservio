@@ -25,9 +25,9 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/restaurants', RestaurantIndex::class)->name('restaurants.index');
+    Route::get('/restaurants/{restaurant:name}/table', RestaurantTable::class)->name('restaurants.table');
     Route::get('/tables', StandIndex::class)->name('stands.index');
     Route::get('/demo', Demo::class)->name('demo');
-    Route::get('/restaurants/{restaurant}/table', RestaurantTable::class)->name('restaurants.table');
 }); 
 
 require __DIR__.'/auth.php';

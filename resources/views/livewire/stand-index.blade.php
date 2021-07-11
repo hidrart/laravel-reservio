@@ -5,14 +5,11 @@
             {{ __('Stands') }}
         </h2>
     </x-slot>
-
     {{-- Recommendation Section --}}
     @php
-    $featured = $stands->first();
-    $restaurant = \App\Models\Restaurant::where('id', $featured->restaurant_id)->first();
-    $category = \App\Models\Category::where('id', $restaurant->category_id)->first();
+        $featured = $stands->first();
     @endphp
-    <div class="p-5 pb-0 md:p-10 md:pb-5">
+    <div class="p-5 pb-0 md:p-20 md:py-5">
         <a href="#"
             class="block bg-center bg-cover bg-no-repeat rounded-lg relative p-5 transform transition-all duration-200 scale-100 hover:scale-105"
             style="background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url({{ $featured->cover }}) ">
@@ -25,7 +22,7 @@
             <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-5">{{ $featured->name }}</h2>
             <div class="flex w-full items-center text-sm text-gray-300 font-medium">
                 <div class="flex-1 flex items-center">
-                    <div>{{ $restaurant->name.' '.$category->name  }}</div>
+                    <div>{{ $featured->restaurant->name.' '.$featured->restaurant->category->name  }}</div>
                 </div>
                 <div><i class="mdi mdi-thumb-up"></i>{{ $featured->seat }} Seats</div>
             </div>
@@ -57,10 +54,6 @@
                     <div class="item-center">
                         <div class="flex grid grid-cols-12 pb-12 sm:px-5 gap-x-8 gap-y-16">
                             @foreach ($stands as $stand)
-                            @php
-                            $restaurant = \App\Models\Restaurant::where('id', $stand->restaurant_id)->first();
-                            $category = \App\Models\Category::where('id', $restaurant->category_id)->first();
-                            @endphp
                             <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                                 <a href="#" class="block">
                                     <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
@@ -68,8 +61,7 @@
                                 </a>
                                 <div class="w-full flex justify-between">
                                     @php
-                                    $color = ['border-blue-400', 'border-red-400', 'border-green-400',
-                                    'border-yellow-400'];
+                                    $color = ['border-blue-400', 'border-red-400', 'border-green-400', 'border-yellow-400'];
                                     $standCategory = ['vip', 'regular', 'private', 'bussiness'];
                                     @endphp
 
@@ -149,16 +141,12 @@
                                         </div>
                                 </div>
                                 <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $stand->name }}</h2>
-                                <p class="text-sm text-gray-500 text-justify">{!!
-                                    \Illuminate\Support\Str::limit($stand->description,
-                                    150,'...') !!}</p>
-                                <p class="text-sm font-medium underline">{{ $restaurant->name.' '.$category->name}}</p>
+                                <p class="text-sm text-gray-500 text-justify">{{ Str::limit($stand->description, 150,'...')  }}</p>
+                                <p class="text-sm font-medium underline">{{ $stand->restaurant->name.' '.$stand->restaurant->category->name }}</p>
                             </div>
                             @endforeach
                         </div>
-                        <div class="item-center">
-                            {!! $stands->links() !!}
-                        </div>
+                        {!! $stands->links() !!}
                         @if ($stands->isEmpty())
                         <p class="text-gray-800 font-bold text-2xl text-center mb-10">No stand found!</p>
                         @endif
