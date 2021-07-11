@@ -7,7 +7,7 @@
     </x-slot>
     <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="px-10 w-full py-8 flex flex-col grid grid-cols-3">
+            <div class="px-10 w-full py-8 flex flex-col grid-cols-3">
                 {{-- title --}}
                 <div class="lg:col-span-2 col-span-3">
                     <h1 class="mb-1 text-4xl font-extrabold leading-none text-gray-900"><a href="#_">Restaurants</a>
@@ -26,7 +26,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="item-center">
-                        <div class="flex grid grid-cols-12 pb-12 sm:px-5 gap-x-8 gap-y-16">
+                        <div class="flex flex-cols-12 pb-12 sm:px-5 gap-x-8 gap-y-16">
                             @foreach ($restaurants as $restaurant)
                             <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                                 <a href="{{ route('restaurants.table', $restaurant) }}" class="block">

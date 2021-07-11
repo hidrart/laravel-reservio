@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Demo;
+use App\Http\Livewire\Home;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\StandIndex;
 use Illuminate\Support\Facades\Route;
@@ -17,10 +18,7 @@ use App\Http\Livewire\RestaurantTable;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class)->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
