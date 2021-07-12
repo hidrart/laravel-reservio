@@ -3,7 +3,7 @@
         <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <svg class="h-12 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="h-12 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 266 100">
                         <path fill="none" d="M0 0h266v100H0z"></path>
                         <path
@@ -12,7 +12,7 @@
                     </svg>
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <svg class="h-10 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="h-10 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 316 60">
                         <g transform="translate(9.259 4.552) scale(.4941)">
                             <path
@@ -40,7 +40,7 @@
                     </svg>
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <svg class="h-8 mt-2 text-gray-500 fill-current" viewBox="0 0 398 120"
+                    <svg class="h-8 mt-2 text-gray-400 fill-current" viewBox="0 0 398 120"
                         xmlns="http://www.w3.org/2000/svg">
                         <g fill-rule="nonzero">
                             <path
@@ -53,7 +53,7 @@
                     </svg>
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-3 lg:col-span-1">
-                    <svg class="h-5 mt-1 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="h-5 mt-1 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 278.7 36.3">
                         <g>
                             <path class="st0"
@@ -63,7 +63,7 @@
                     </svg>
                 </div>
                 <div class="flex items-center justify-center col-span-2 md:col-span-3 lg:col-span-1">
-                    <svg class="h-8 text-gray-500 fill-current" viewBox="0 0 2270 546"
+                    <svg class="h-8 text-gray-400 fill-current" viewBox="0 0 2270 546"
                         xmlns="http://www.w3.org/2000/svg">
                         <g fill-rule="evenodd">
                             <path

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Reservio') }}</title>
 
     <!-- Fonts -->
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     </div>
 
     {{-- page header --}}
-    @include('layouts.footer')
+    @include('livewire.pages.footer')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

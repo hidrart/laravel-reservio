@@ -1,4 +1,4 @@
-<section class="flex items-center justify-center py-20 px-20">
+<section class="flex items-center justify-center py-20 px-20 bg-gray-100">
     <div class="flex flex-col items-center lg:flex-row">
         <div class="flex flex-col items-start justify-center w-full h-full pr-8 mb-10 lg:mb-0 lg:w-1/2">
             <h2 class="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">
@@ -12,8 +12,7 @@
                 Case Studies</a>
         </div>
         <div class="w-full lg:w-1/2">
-            <blockquote
-                class="flex items-center justify-between w-full col-span-1 p-6 bg-gray-100 rounded-lg">
+            <blockquote class="flex items-center justify-between w-full col-span-1 p-6 mt-4 bg-white rounded-lg">
                 <div class="flex flex-col pr-8">
                     <div class="relative pl-12">
                         <svg class="absolute left-0 w-10 h-10 text-reservio fill-current"
@@ -26,18 +25,16 @@
                             product! And the customer service is exceptionally well.</p>
                     </div>
 
-                    <h3
-                        class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 truncate sm:text-base lg:text-sm">
+                    <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 sm:text-base lg:text-sm">
                         Jane Cooper
-                        <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO SomeCompany</span>
+                        <span class="mt-1 text-sm leading-5 text-gray-500 "> - CEO SomeCompany</span>
                     </h3>
                 </div>
-                <img class="flex-shrink-0 w-20 h-20 bg-gray-300 rounded-full xl:w-24 xl:h-24"
+                <img class="w-20 h-20 bg-gray-300 rounded-full xl:w-24 xl:h-24"
                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60"
                     alt="">
             </blockquote>
-            <blockquote
-                class="flex items-center justify-between w-full col-span-1 p-6 mt-4 bg-gray-100 rounded-lg">
+            <blockquote class="flex items-center justify-between w-full col-span-1 p-6 mt-4 bg-white rounded-lg">
                 <div class="flex flex-col pr-10">
                     <div class="relative pl-12">
                         <svg class="absolute left-0 w-10 h-10 text-reservio fill-current"
@@ -49,19 +46,17 @@
                         <p class="mt-2 text-sm text-gray-600 sm:text-base lg:text-sm xl:text-base">I can't
                             express enough, how amazing this service has been for my company.</p>
                     </div>
-                    <h3
-                        class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 truncate sm:text-base lg:text-sm">
+                    <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800  sm:text-base lg:text-sm">
                         John Doe
-                        <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO SomeCompany</span>
+                        <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO SomeCompany</span>
                     </h3>
-                    <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
+                    <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
                 </div>
                 <img class="flex-shrink-0 w-20 h-20 bg-gray-300 rounded-full"
                     src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;aauto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60"
                     alt="">
             </blockquote>
-            <blockquote
-                class="flex items-center justify-between w-full col-span-1 p-6 mt-4 bg-gray-100 rounded-lg">
+            <blockquote class="flex items-center justify-between w-full col-span-1 p-6 mt-4 bg-white rounded-lg">
                 <div class="flex flex-col pr-10">
                     <div class="relative pl-12">
                         <svg class="absolute left-0 w-10 h-10 text-reservio fill-current"
@@ -73,12 +68,11 @@
                         <p class="mt-2 text-sm text-gray-600 sm:text-base lg:text-sm xl:text-base">I can't
                             express enough, how amazing this service has been for my company.</p>
                     </div>
-
-                    <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 truncate sm:text-base lg:text-sm
+                    <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 sm:text-base lg:text-sm">
                         John Smith
                         <span class=" mt-1 text-sm leading-5 text-gray-500 truncate">- CEO SomeCompany</span>
                     </h3>
-                    <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
+                    <p class="mt-1 text-sm leading-5 text-gray-500"></p>
                 </div>
                 <img class="flex-shrink-0 w-20 h-20 bg-gray-300 rounded-full"
                     src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rrb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;aauto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60"

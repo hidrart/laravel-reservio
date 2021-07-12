@@ -1,4 +1,4 @@
-<section class="px-20 py-24">
+<section class="px-20 py-24 bg-white">
     <div class="container items-center">
         <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-x-20">
             <div class="w-full col-span-1">
