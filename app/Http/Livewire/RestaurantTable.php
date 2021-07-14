@@ -14,12 +14,17 @@ class RestaurantTable extends Component
     public Restaurant $restaurant;
     public $type = null;
     public $search;
-    protected $queryString = ['search'];
+    protected $queryString = ['search', 'type'];
     
     public function updatingSearch()
     {
         $this->resetPage();   
     }
+    
+    public function updatingType()
+    {
+        $this->resetPage();   
+    }   
     
     public function render()
     {   

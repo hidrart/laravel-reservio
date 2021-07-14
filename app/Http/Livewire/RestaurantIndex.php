@@ -11,12 +11,17 @@ class RestaurantIndex extends Component
     use WithPagination;
     public $search;
     public $category;
-    protected $queryString = ['search'];
+    protected $queryString = ['search', 'category'];
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
+    
+    public function updatingCategory()
+    {
+        $this->resetPage();   
+    }   
     
     public function render()
     {

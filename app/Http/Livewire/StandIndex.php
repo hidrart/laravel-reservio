@@ -11,12 +11,17 @@ class StandIndex extends Component
     use WithPagination;
     public $search;
     public $type = null;
-    protected $queryString = ['search'];
+    protected $queryString = ['search', 'type'];
     
     public function updatingSearch()
     {
         $this->resetPage();
     }
+    
+    public function updatingType()
+    {
+        $this->resetPage();   
+    }   
     
     public function render()
     {   

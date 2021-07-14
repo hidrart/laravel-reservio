@@ -11,7 +11,7 @@
                 <p class="mx-auto text-sm text-gray-500 lg:text-lg md:max-w-3xl">It's never been
                     easier to book a table in your favourite restaurants.</p>
                 <div class="relative flex flex-col sm:flex-row sm:space-x-4">
-                    <a href="{{ route('home') }}"
+                    <a href="{{ route('restaurants.index') }}"
                         class="flex items-center w-full px-6 py-2 mb-3 text-sm font-semibold text-white bg-reservio rounded-md sm:mb-0 hover:bg-reservio-darker sm:w-auto">
                         Start Booking
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"
