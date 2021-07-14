@@ -19,7 +19,8 @@
 </head>
 
 <body class="antialiased" style="font-family: 'Poppins', sans-serif;">
-    <div class="min-h-screen">
+    <div class="min-h-screen max-w-screen-2xl 2xl:mx-auto">
+
         {{-- navbar --}}
         @livewire('navigation')
 
@@ -27,6 +28,7 @@
         <main>
             {{ $slot }}
         </main>
+
     </div>
 
     {{-- page header --}}

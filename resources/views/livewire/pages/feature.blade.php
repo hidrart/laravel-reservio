@@ -7,7 +7,7 @@
             </div>
             <div class="w-full col-span-1 pt-16 lg:pt-0">
                 <h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                    Reservio simplified the reservation process for you</h2>
+                    Reservio simplified the <span class="text-reservio">reservation process</span> for you</h2>
                 <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">It's never been
                     easier to book a table in your favourite restaurants. Our tools will help you with the
                     following:</p>

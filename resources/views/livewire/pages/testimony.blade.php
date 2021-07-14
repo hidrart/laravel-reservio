@@ -2,7 +2,7 @@
     <div class="flex flex-col items-center lg:flex-row">
         <div class="flex flex-col items-start justify-center w-full h-full pr-8 mb-10 lg:mb-0 lg:w-1/2">
             <h2 class="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl font-heading">
-                Testimonials</h2>
+                <span class="text-reservio">Testimonials</span> from some of the satisifed customer</h2>
             <p class="mb-4 font-medium tracking-tight text-gray-400 xl:mb-6">Our customers love
                 our product</p>
             <p class="mb-4 font-medium text-gray-600">Don't just take our word for it, read from our extensive list
@@ -70,7 +70,7 @@
                     </div>
                     <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-gray-800 sm:text-base lg:text-sm">
                         John Smith
-                        <span class=" mt-1 text-sm leading-5 text-gray-500 truncate">- CEO SomeCompany</span>
+                        <span class=" mt-1 text-sm leading-5 text-gray-500">- CEO SomeCompany</span>
                     </h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500"></p>
                 </div>

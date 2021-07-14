@@ -1,38 +1,40 @@
 <div>
-    {{-- Header Section --}}
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Stands') }}
-        </h2>
-    </x-slot>
-    {{-- Recommendation Section --}}
     @php
-        $featured = $stands->first();
+    $featured = $stands->first();
     @endphp
-    <div class="p-5 pb-0 md:p-20 md:py-5">
-        <a href="#"
-            class="block bg-center bg-cover bg-no-repeat rounded-lg relative p-5 transform transition-all duration-200 scale-100 hover:scale-105"
-            style="background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url({{ $featured->cover }}) ">
-            <div class="absolute top-0 right-0 -mt-3 mr-3">
-                <div class="rounded-full bg-yellow-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i
-                        class="mdi mdi-fire text-base align-middle"></i> <span class="align-middle">Recommended</span>
+    <div class="max-w-7xl mx-auto pb-10 sm:px-6 lg:px-8">
+        <div class="px-10 w-full py-8">
+            <h1 class="mb-1 text-4xl font-extrabold text-gray-900"><a href="#_">Recommendation</a>
+            </h1>
+            <p class="text-sm pt-3 text-gray-500">
+                <span class="text-reservio font-medium"> {{  $featured->name }} </span> - {{ $featured->description }}
+            </p>
+        </div>
+        {{-- Recommendation Section --}}
+        <div class="">
+            <a href="#"
+                class="block bg-center bg-cover bg-no-repeat rounded-lg relative p-5 transform transition-all duration-200 scale-100 hover:scale-[102%]"
+                style="background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url({{ $featured->cover }}) ">
+                <div class="absolute top-0 right-0 -mt-3 mr-3">
+                    <div class="rounded-full bg-yellow-500 text-white text-xs py-1 pl-2 pr-3 leading-none"><i
+                            class="mdi mdi-fire text-base align-middle"></i> <span
+                            class="align-middle">Recommended</span>
+                    </div>
                 </div>
-            </div>
-            <div class="h-80"></div>
-            <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-5">{{ $featured->name }}</h2>
-            <div class="flex w-full items-center text-sm text-gray-300 font-medium">
-                <div class="flex-1 flex items-center">
-                    <div>{{ $featured->restaurant->name.' '.$featured->restaurant->category->name  }}</div>
+                <div class="h-80"></div>
+                <h2 class="text-white text-2xl font-bold leading-tight mb-3 pr-5">{{ $featured->name }}</h2>
+                <div class="flex w-full items-center text-sm text-gray-300 font-medium">
+                    <div class="flex-1 flex items-center">
+                        <div>{{ $featured->restaurant->name.' '.$featured->restaurant->category->name  }}</div>
+                    </div>
+                    <div><i class="mdi mdi-thumb-up"></i>{{ $featured->seat }} Seats</div>
                 </div>
-                <div><i class="mdi mdi-thumb-up"></i>{{ $featured->seat }} Seats</div>
-            </div>
-        </a>
+            </a></div>
     </div>
 
     {{-- main section --}}
     <div class="pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            
             {{-- title --}}
             <div class="px-10 w-full pt-8 grid grid-cols-3">
                 <div class="lg:col-span-2 col-span-3">
@@ -42,26 +44,26 @@
                 </div>
                 <div class="lg:col-span-1 col-span-3 py-3 my-3 rounded-lg space-x-3 flex items-center w-">
                     <input wire:model="search" type="search"
-                        class="w-full rounded-lg bg-white border-0 focus:ring-0 placeholder-gray-400 text-sm"
+                        class="w-full rounded-lg bg-gray-100 border-0 focus:ring-0 placeholder-gray-400 text-sm"
                         placeholder="Type a table name">
                     <button class="focus:outline-none"><i class="fa fa-search text-gray-500"></i></button>
                 </div>
             </div>
-
             {{-- cards  --}}
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-transparent overflow-hidden sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="item-center">
                         <div class="grid grid-cols-12 pb-12 sm:px-5 gap-x-8 gap-y-16">
                             @foreach ($stands as $stand)
-                            <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
+                            <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 lg:col-span-4">
                                 <a href="#" class="block">
                                     <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
                                         src="{{ $stand->cover }}">
                                 </a>
                                 <div class="w-full flex justify-between">
                                     @php
-                                    $color = ['border-blue-400', 'border-red-400', 'border-green-400', 'border-yellow-400'];
+                                    $color = ['border-blue-400', 'border-red-400', 'border-green-400',
+                                    'border-yellow-400'];
                                     $standCategory = ['vip', 'regular', 'private', 'bussiness'];
                                     @endphp
 
@@ -141,8 +143,10 @@
                                         </div>
                                 </div>
                                 <h2 class="text-lg font-bold sm:text-xl md:text-2xl">{{ $stand->name }}</h2>
-                                <p class="text-sm text-gray-500 text-justify">{{ Str::limit($stand->description, 150,'...')  }}</p>
-                                <p class="text-sm font-medium underline">{{ $stand->restaurant->name.' '.$stand->restaurant->category->name }}</p>
+                                <p class="text-sm text-gray-500 text-justify">
+                                    {{ Str::limit($stand->description, 150,'...')  }}</p>
+                                <p class="text-sm font-medium underline">
+                                    {{ $stand->restaurant->name.' '.$stand->restaurant->category->name }}</p>
                             </div>
                             @endforeach
                         </div>
