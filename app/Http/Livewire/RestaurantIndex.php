@@ -29,7 +29,7 @@ class RestaurantIndex extends Component
             $restaurant = Restaurant::where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
         }
         else {
-            $restaurant = Restaurant::where('category_id', $this->category)->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
+            $restaurant = Restaurant::where('category', $this->category)->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
         }
         return view('livewire.restaurant-index', [
             'restaurants' => $restaurant,

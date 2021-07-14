@@ -29,6 +29,7 @@ class RestaurantTable extends Component
     public function render()
     {   
         $restaurantStands = $this->restaurant->stand();
+        $restaurantFoods = $this->restaurant->food();
         
         if(! $this->type) {
             $stands =  $restaurantStands->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
@@ -40,8 +41,8 @@ class RestaurantTable extends Component
         return view('livewire.restaurant-table', [
             'restaurant' => $this->restaurant,
             'stands' => $stands,
+            'foods' => $restaurantFoods,
             'active_type' => $this->type,
-            'foods' => $this->restaurant->food()
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <!-- Hero Section 2 -->
 <section class="p-20">
-    <div class="items-center grid grid-cols-12 space-y-20 md:space-y-0 md:space-x-20">
+    <div class="grid items-center grid-cols-12 space-y-20 md:space-y-0 md:space-x-20">
         <div class="col-span-12 md:col-span-7">
             <div class="space-y-6 lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
                 <h1
@@ -12,7 +12,7 @@
                     easier to book a table in your favourite restaurants.</p>
                 <div class="relative flex flex-col sm:flex-row sm:space-x-4">
                     <a href="{{ route('restaurants.index') }}"
-                        class="flex items-center w-full px-6 py-2 mb-3 text-sm font-semibold text-white bg-reservio rounded-md sm:mb-0 hover:bg-reservio-darker sm:w-auto">
+                        class="flex items-center w-full px-6 py-2 mb-3 text-sm font-semibold text-white rounded-md bg-reservio sm:mb-0 hover:bg-reservio-darker sm:w-auto">
                         Start Booking
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

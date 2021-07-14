@@ -1,5 +1,5 @@
 <!-- Section 6 -->
-<section class="py-20 px-20 bg-white">
+<section class="px-20 py-20 bg-white">
     <h2 class="mb-4 text-xl font-bold md:text-3xl"><span class="text-reservio">Frequently</span> Asked Questions</h2>
     <div class="grid grid-cols-1 gap-0 text-gray-600 md:grid-cols-2 md:gap-16">
         <div>

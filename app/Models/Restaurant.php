@@ -10,7 +10,7 @@ class Restaurant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','description','cover','score','address'
+        'name','description','cover','score','address', 'category'
     ];
     
     public function stand()
@@ -21,9 +21,4 @@ class Restaurant extends Model
     {
         return $this->hasMany(Food::class);
     }
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
 }

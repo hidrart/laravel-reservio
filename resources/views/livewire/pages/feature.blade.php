@@ -2,7 +2,7 @@
     <div class="container items-center">
         <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-x-20">
             <div class="w-full col-span-1">
-                <img class="bg-center bg-cover bg-no-repeat rounded-lg transform transition-all duration-200 scale-100 hover:scale-105"
+                <img class="transition-all duration-200 transform scale-100 bg-center bg-no-repeat bg-cover rounded-lg hover:scale-105"
                     src={{ asset('src/content-1.jpg') }}>
             </div>
             <div class="w-full col-span-1 pt-16 lg:pt-0">

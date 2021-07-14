@@ -16,14 +16,13 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->timestamps();            
+            $table->string('category');
             $table->string('name');
             $table->text('description');
             $table->string('address')->nullable();
             $table->string('cover');
             $table->float('score', 2, 1);
-            $table->unsignedInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
