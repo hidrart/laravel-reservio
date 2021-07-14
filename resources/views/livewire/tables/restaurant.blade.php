@@ -7,16 +7,16 @@
         <div class="flex flex-row flex-wrap lg:p-10">
             <div class="w-full lg:w-1/4 p-3 rounded-lg">
                 <h1 class="px-4 py-2 text-lg font-bold text-gray-900">
-                    Category
+                    Categories
                 </h1>
                 <div class="flex flex-col gap-y-2 py-2">
                     <button wire:click="$set('category', null)"
-                        class="w-full text-left py-2 px-4  text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900 active:text-gray-900  hover:bg-gray-200 focus:bg-gray-200 active:bg-gray-200 @if($active_category == null) bg-gray-200 text-gray-900 @else text-gray-400 @endif"">
+                        class="w-full text-left py-2 px-4 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900  hover:bg-gray-200 focus:bg-gray-200 @if($active_category == null) bg-gray-200 text-gray-900 @else text-gray-400 @endif">
                         All Category
                     </button>
                     @foreach ($categories as $index => $category)
                     <button wire:click=" $set('category', {{ $index + 1 }})"
-                        class="w-full text-left py-2 px-4  text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900   hover:bg-gray-200 focus:bg-gray-200  @if($active_category == $index + 1) bg-gray-200 text-gray-900 @else text-gray-400 bg-transparent @endif">
+                        class="w-full text-left py-2 px-4 text-sm font-semibold rounded-lg hover:text-gray-900 focus:text-gray-900  hover:bg-gray-200 focus:bg-gray-200  @if($active_category == $index + 1) bg-gray-200 text-gray-900 @else text-gray-400 @endif">
                         {{ $category }}
                     </button>
                     @endforeach

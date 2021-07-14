@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Category;
 use App\Models\Restaurant;
 use Livewire\WithPagination;
 
@@ -17,12 +16,11 @@ class RestaurantIndex extends Component
     public function updatingSearch()
     {
         $this->resetPage();
-        // $this->category = null;  
     }
     
     public function render()
     {
-        if(! $this->category) {
+        if(! $this->category) { 
             $restaurant = Restaurant::where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
         }
         else {

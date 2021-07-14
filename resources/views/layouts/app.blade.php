@@ -19,7 +19,7 @@
 </head>
 
 <body class="antialiased" style="font-family: 'Poppins', sans-serif;">
-    <div class="min-h-screen max-w-screen-2xl 2xl:mx-auto">
+    <div class="min-h-screen max-w-screen-3xl 3xl:mx-auto">
 
         {{-- navbar --}}
         @livewire('navigation')

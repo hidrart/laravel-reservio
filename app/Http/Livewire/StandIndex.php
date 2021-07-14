@@ -10,18 +10,25 @@ class StandIndex extends Component
 {
     use WithPagination;
     public $search;
+    public $type = null;
     protected $queryString = ['search'];
-
+    
     public function updatingSearch()
     {
-        $this->resetPage();   
+        $this->resetPage();
     }
     
     public function render()
-    {
-        $stands = Stand::where('name', 'like', '%'.$this->search.'%')->inRandomOrder()->paginate(12); 
-        return view('livewire.stand-index',[
-            'stands' => $stands
+    {   
+        if(! $this->type) {
+            $stands = Stand::where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
+        }
+        else {
+            $stands = Stand::where('type', $this->type)->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
+        }
+        return view('livewire.stand-index', [
+            'stands' => $stands,
+            'active_type' => $this->type
         ]);
     }
 }

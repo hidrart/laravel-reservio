@@ -12,6 +12,7 @@ class RestaurantTable extends Component
 {
     use WithPagination;
     public Restaurant $restaurant;
+    public $type = null;
     public $search;
     protected $queryString = ['search'];
     
@@ -22,11 +23,20 @@ class RestaurantTable extends Component
     
     public function render()
     {   
-        $category = Category::where('id', $this->restaurant->category_id)->first();
+        $restaurantStands = $this->restaurant->stand();
+        
+        if(! $this->type) {
+            $stands =  $restaurantStands->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
+        }
+        else {
+            $stands =  $restaurantStands->where('type', $this->type)->where('name', 'like', '%'.$this->search.'%')->orderBy('name', 'asc')->paginate(8); 
+        }    
+
         return view('livewire.restaurant-table', [
-            'category' => $category,
             'restaurant' => $this->restaurant,
-            'stands' => Stand::where('restaurant_id', $this->restaurant->id)->where('name', 'like', '%'.$this->search.'%')->paginate(12)
+            'stands' => $stands,
+            'active_type' => $this->type,
+            'foods' => $this->restaurant->food()
         ]);
     }
 }
